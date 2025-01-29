@@ -18,7 +18,7 @@ const Posts = ({ text, date }) => {
     <div className="postss">
       <div className="postss__first">
         <div className="posts__first__img">
-          <img src="/images/profile.jfif" alt="profile img" />
+          <img src="/images/logo.png" alt="profile img" />
         </div>
         <div className="posts__first__name">
           <strong>Duarte Gauss</strong> <FaRegCheckCircle className="verify" />

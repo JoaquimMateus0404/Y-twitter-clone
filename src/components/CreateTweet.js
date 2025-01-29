@@ -32,7 +32,7 @@ const CreateTweet = ({ addTweet }) => {
     <div className="create">
       <div className="create__first">
         <div className="create__img">
-          <img src="/images/profile.jfif" alt="profile img" />
+          <img src="/images/logo.png" alt="profile img" />
         </div>
         <div className="create__input">
           <textarea
