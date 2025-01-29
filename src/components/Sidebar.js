@@ -60,25 +60,9 @@ const Sidebar = () => {
             <FaMehBlank className="icons" /> More
           </a>
         </li>
-        <li>
-          <a href="">
-            <FaMehBlank className="icons" /> More
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <FaMehBlank className="icons" /> More
-          </a>
-        </li>
         <div className="sidebar__Btn">
           <a href="">Postar</a>
         </div>
-        <div className="sidebar__Btn">
-          <a href="">Postar</a>
-        </div>
-        <di>
-          <label>Duarte</label>
-        </di>
       </ul>
     </div>
   );
