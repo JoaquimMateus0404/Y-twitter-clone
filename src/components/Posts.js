@@ -6,14 +6,20 @@ import {
   FaHeart,
   FaLeaf,
 } from "react-icons/fa";
+
 const Posts = ({ text, date }) => {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(3); // Valor inicial de curtidas
 
   const handleLike = () => {
+    if (liked) {
+      setLikes((prevLikes) => prevLikes - 1);
+    } else {
+      setLikes((prevLikes) => prevLikes + 1);
+    }
     setLiked(!liked);
-    setLikes(liked ? likes - 1 : likes + 1);
   };
+
   return (
     <div className="postss">
       <div className="postss__first">
@@ -24,7 +30,7 @@ const Posts = ({ text, date }) => {
           <strong>Duarte Gauss</strong> <FaRegCheckCircle className="verify" />
         </div>
         <div className="posts__first__username">
-          @duartegauss <span>1s</span>
+          @duartegauss <span>{date || "1s"}</span>
         </div>
       </div>
       <div className="postss__details">
@@ -41,7 +47,10 @@ const Posts = ({ text, date }) => {
           <span className="chart-icon">
             <FaRegChartBar className="re" /> 4
           </span>
-          <span className={`heart-icon ${liked ? 'liked' : ''}`} onClick={handleLike}>
+          <span
+            className={`heart-icon ${liked ? 'liked' : ''}`}
+            onClick={handleLike}
+          >
             <FaHeart className="re" /> {likes}
           </span>
           <span className="leaf-icon">
