@@ -24,7 +24,7 @@ const Posts = ({ text, date }) => {
           <strong>Duarte Gauss</strong> <FaRegCheckCircle className="verify" />
         </div>
         <div className="posts__first__username">
-          @duartegauss <span>{date}</span>
+          @duartegauss <span>1s</span>
         </div>
       </div>
       <div className="postss__details">
