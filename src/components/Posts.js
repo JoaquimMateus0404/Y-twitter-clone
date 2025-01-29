@@ -7,6 +7,18 @@ import {
   FaLeaf,
 } from "react-icons/fa";
 
+// Função para formatar timestamp para um formato legível
+const formatDate = (timestamp) => {
+  const dateObj = new Date(timestamp);
+  const day = String(dateObj.getDate()).padStart(2, "0");
+  const month = String(dateObj.getMonth() + 1).padStart(2, "0"); // Janeiro é 0
+  const year = dateObj.getFullYear();
+  const hours = String(dateObj.getHours()).padStart(2, "0");
+  const minutes = String(dateObj.getMinutes()).padStart(2, "0");
+
+  return `${day}/${month}/${year} ${hours}:${minutes}`;
+};
+
 const Posts = ({ text, date }) => {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(3); // Valor inicial de curtidas
@@ -30,12 +42,12 @@ const Posts = ({ text, date }) => {
           <strong>Duarte Gauss</strong> <FaRegCheckCircle className="verify" />
         </div>
         <div className="posts__first__username">
-          @duartegauss <span>{date || "1s"}</span>
+          @duartegauss <span>{date ? formatDate(date) : "1s"}</span>
         </div>
       </div>
       <div className="postss__details">
         <div className="postss__details__msg">
-          <p>{text}</p>          
+          <p>{text}</p>
         </div>
         <div className="postss__details__img">
           <img src="/images/post.jpg" alt="post" />
@@ -48,7 +60,7 @@ const Posts = ({ text, date }) => {
             <FaRegChartBar className="re" /> 4
           </span>
           <span
-            className={`heart-icon ${liked ? 'liked' : ''}`}
+            className={`heart-icon ${liked ? "liked" : ""}`}
             onClick={handleLike}
           >
             <FaHeart className="re" /> {likes}
